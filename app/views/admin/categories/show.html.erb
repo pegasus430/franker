@@ -1,0 +1,134 @@
+
+<%- model_class = Category -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:store_id) %>:</strong></dt>
+  <dd><%= @category.store_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:parent_id) %>:</strong></dt>
+  <dd><%= @category.parent_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:overall_category) %>:</strong></dt>
+  <dd><%= @category.overall_category %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:category_type) %>:</strong></dt>
+  <dd><%= @category.category_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @category.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:special_tag) %>:</strong></dt>
+  <dd><%= @category.special_tag.present? ? @category.special_tag : "None" %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:url) %>:</strong></dt>
+  <dd><%= link_to @category.url, @category.url, target: "_blank" %></dd>
+  <dt><strong>Items Active and Unsold Count:</strong></dt>
+  <dd><%= @items.active_and_unsold.count %></dd>
+</dl>
+
+<br/>
+
+<%- @store = @category.store %>
+
+<%= form_tag admin_category_path(@category), :method => "GET",  :html => { :class => 'form-horizontal' } do  %>
+  <div class="control-group span9">
+      <lable class="control-label span2">Items Search</lable>
+      <div class="controls  span3">
+        <%= text_field_tag :query, params[:query],:class => 'text_field' %>
+      </div>
+      <div class="span2">
+        <%= submit_tag "Submit", :class => 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>
+<div class="clear"></div>
+
+<% if @items.present? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= model_class.human_attribute_name(:id) %></th>
+        <th><%= model_class.human_attribute_name(:name) %></th>
+        <th><%= model_class.human_attribute_name(:store_id) %></th>
+        <th><%= model_class.human_attribute_name(:url) %></th>
+        <th><%= model_class.human_attribute_name(:price) %></th>
+        <th><%= model_class.human_attribute_name(:msrp) %></th>
+        <th><%= model_class.human_attribute_name(:status) %></th>
+        <th>Availability</th>
+        <th>Trending</th>
+        <th><%= model_class.human_attribute_name(:image_id) %></th>
+        <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= link_to item.id, admin_store_item_path(@store, item) %></td>
+          <td><%= item.name %></td>
+          <td><%= item.store_id %></td>
+          <td class="item-url"><%= link_to item.url, item.url, target: "_blank" %></td>
+          <td><%= item.price %></td>
+          <td><%= item.msrp %></td>
+          <td><%= item.active ? "Active" : "Inactive" %></td>
+          <% if item.sold_out %>
+            <td><b>Sold Out</b></td>
+          <% else %>
+            <td><b>Available</b></td>
+          <% end %>
+          <% if item.trending %>
+            <td><b>True</b></td>
+          <% else %>
+            <td><b>False</b></td>
+          <% end %>
+
+          <td><%= item.image.present? && item.image.file.present? ? link_to(image_tag(item.image.file.url, width: 50, height: 50), item.image.file.url, target: "_blank") : "" %></td>
+          <td>
+  <!--           <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        edit_admin_store_item_path(@store, item), :class => 'btn btn-mini' %>
+
+   -->
+                <% if item.active %>
+                  <%= link_to "De-activate",
+                          admin_store_item_deactivate_path(@store, item),
+                          :method => :post,
+                          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                          :class => 'btn btn-mini btn-danger', :style => "width:75px;" %>
+                <% else %>
+                  <%= link_to "Activate",
+                          admin_store_item_activate_path(@store, item),
+                          :method => :post,
+                          :class => 'btn btn-mini btn-success', :style => "width:75px;" %>
+                <% end %>
+                <div class="clear"></div>
+                <br/>
+                <% if item.trending %>
+                  <%= link_to "Un-Trend",
+                          admin_store_item_trending_path(@store, item),
+                          :method => :delete,
+                          :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                          :class => 'btn btn-mini btn-danger', :style => "width:75px;" %>
+                <% else %>
+                  <%= link_to "Trend",
+                          admin_store_item_trending_path(@store, item),
+                          :method => :post,
+                          :class => 'btn btn-mini btn-success', :style => "width:75px;" %>
+                <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+
+<br/>
+<div class="clear"></div>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              admin_categories_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_admin_category_path(@category), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              admin_category_path(@category),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

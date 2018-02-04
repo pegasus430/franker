@@ -1,0 +1,26 @@
+---
+:concurrency: 5
+:pidfile: ./tmp/pids/sidekiq.pid
+development:
+  :concurrency: 5
+production:
+  :concurrency: 6
+staging:
+  :concurrency: 5
+:queues:
+  - [more_info, 8]
+  - [store_crawler, 7]
+  - [more_info_slow, 6]
+  - [silent_notification, 6]
+  - [forever_crawler, 5]
+  - [cj_crawler, 5]
+  - [linkshare_crawler, 5]
+  - [slow_crawler, 5]
+  - [ebay_crawler, 5]
+  - [items_sold_out_crawler, 4]
+  - [update_more_info_crawler, 4]
+  - [shopsense_crawler, 4]
+  - [image_crawler, 2]
+  - [default, 5]
+  - [new_stores_crawler, 5]
+  - [seldom, 3]

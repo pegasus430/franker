@@ -1,0 +1,9 @@
+<div class="control-group">
+  <%= f.text_field :position, :class => 'text_field', placeholder: "Position" %>
+  <%= f.text_field :item_id, :class => 'text_field', placeholder: "Item ID" %>
+  <%= f.text_field :quote, :class => 'text_field', placeholder: "Quote" %>
+  <%= f.submit "Submit", :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            admin_list_path(list), :class => 'btn' %>
+
+</div>

@@ -1,0 +1,27 @@
+<br/>
+<h2> Destroy a user </h2>
+<br/>
+<%= form_for destroy_individual_admin_users_path, url: destroy_individual_admin_users_path, :method => :post, :html => { :class => 'form-horizontal' } do |f| %>
+    <div class="control-group">
+      <%= f.label :uuid, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :uuid, :class => 'text_field', name: "users[uuid]" %>
+      </div>
+    </div>
+
+    <br/>
+    <h4> OR </h4>
+    <br/>
+    <div class="control-group">
+      <%= f.label :imei, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :imei, :class => 'text_field', name: "users[imei]" %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Submit", :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  root_path, :class => 'btn' %>
+    </div>
+<% end %>

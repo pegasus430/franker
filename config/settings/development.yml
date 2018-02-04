@@ -1,0 +1,7 @@
+aws:
+  s3:
+    bucket: 'dote-images'
+    url: 'dote-images.s3.amazonaws.com'
+    access:
+      key_id: "AKIAJQSFOOW5IVFUJDRA"
+      secret_access_key: "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"

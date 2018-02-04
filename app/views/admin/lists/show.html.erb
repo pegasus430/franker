@@ -1,0 +1,89 @@
+<%- model_class = List -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @list.name %></dd>
+</dl>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:content_square_image) %>:</strong></dt>
+  <dd><%= image_tag(@list.content_square_image, style: "width:100px;height:100px;") %></dd>
+</dl>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:cover_image) %>:</strong></dt>
+  <dd><%= image_tag(@list.cover_image, style: "width:100px;height:100px;") %></dd>
+</dl>
+<div class="clear"></div>
+<h2> Items </h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:position) %></th>
+      <th><%= model_class.human_attribute_name(:item_id) %></th>
+      <th><%= model_class.human_attribute_name(:quote) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @list.item_lists.each do |list| %>
+      <% if list.present? %>
+
+        <tr>
+          <td><%= list.position %></td>
+          <td><%= list.item_id %></td>
+          <td><%= list.quote %></td>
+          <td>
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        admin_list_edit_item_list_path(list_id: @list, id: list), :class => 'btn btn-mini' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                         admin_list_destroy_item_list_path(list_id: @list, id: list),
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                        :class => 'btn btn-mini btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<div class="clear"></div>
+<%= form_for @item_list, url: admin_list_create_item_lists_path(@list.id), :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="row">
+
+    <div class="control-group">
+  <%= f.text_field :position, :class => 'text_field', placeholder: "Position" %>
+  <%= f.text_field :item_id, :class => 'text_field', placeholder: "Item ID", required: true %>
+  <%= f.text_field :quote, :class => 'text_field', placeholder: "Quote", maxlength: '80' %>
+  <%= f.submit "Submit", :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            admin_list_path(@list), :class => 'btn' %>
+</div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+  </div>
+
+<% end %>
+
+<div class="clear"></div>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              admin_lists_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_admin_list_path(@list), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              admin_list_path(@list),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

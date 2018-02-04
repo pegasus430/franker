@@ -1,0 +1,80 @@
+<%= form_for @store, url: admin_store_path(@store), :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+  <% if f.object.errors.present? %>
+    <%= content_tag :ul do %>
+      <% f.object.errors.full_messages.each do |error| %>
+        <%= content_tag :li do %>
+          <%= content_tag :b, error, class: 'alert-error' %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field', readonly: true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :url, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :url, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :image_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :image_id, :class => 'text_field', readonly: true %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :position, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :position, :class => 'text_field', required: true, value: @store.position %>
+    </div>
+  </div>
+
+  <% if @store.payment == true %>
+    <div class="control-group">
+      <%= f.label :shipping_price, :class => 'control-label' %>
+      <div class="controls">
+        <span> $ </span>
+        <%= f.text_field :shipping_price, :class => 'text_field', value: ((@store.shipping_price.to_f)/100.0 if @store.shipping_price.present?) %>
+        <span> IN DOLLARS </span>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :min_threshold_amount, :class => 'control-label' %>
+      <div class="controls">
+        <span> $ </span>
+        <%= f.text_field :min_threshold_amount, :class => 'text_field', value: ((@store.min_threshold_amount.to_f)/100.0 if @store.min_threshold_amount.present?) %>
+        <span> IN DOLLARS </span>
+      </div>
+    </div>
+  <% end %>
+  
+  <div class="control-group">
+  	<%= f.label :logo_icon, :class => 'control-label' %>
+  	<%= image_tag @store.logo_icon_url.to_s %>
+    <%= f.file_field :logo_icon %>
+  </div>
+
+  <div class="control-group">
+  	<%= f.label :square_logo_icon, :class => 'control-label' %>
+    <%= image_tag @store.square_logo_icon_url.to_s %>
+    <%= f.file_field :square_logo_icon %>
+  </div>
+
+  <div class="control-group">
+  	<%= f.label :circle_logo_icon, :class => 'control-label' %>
+    <%= image_tag @store.circle_logo_icon_url.to_s %>
+    <%= f.file_field :circle_logo_icon %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_stores_path, :class => 'btn' %>
+  </div>
+<% end %>

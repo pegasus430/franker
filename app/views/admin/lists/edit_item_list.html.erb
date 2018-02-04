@@ -1,0 +1,14 @@
+<h2>Edit Item List : </h2>
+<%= form_for @item_list, url: admin_list_update_item_list_path(list_id: @list.id, id: @item_list), :html => { :class => 'form-horizontal', method: :post } do |f| %>
+  <div class="row">
+
+    <div class="control-group">
+  <%= f.text_field :position, :class => 'text_field', placeholder: "Position" %>
+  <%= f.text_field :item_id, :class => 'text_field', placeholder: "Item ID", required: true %>
+  <%= f.text_field :quote, :class => 'text_field', placeholder: "Quote", maxlength: "80" %>
+  <%= f.submit "Submit", :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            admin_list_path(@list), :class => 'btn' %>
+</div>
+  </div>
+<% end %>

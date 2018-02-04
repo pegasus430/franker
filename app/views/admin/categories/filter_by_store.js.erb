@@ -1,0 +1,1 @@
+$('#category_parent_id').html("<%= escape_javascript(options_for_select(@categories.map {|c| [c.name, c.id]}, @category.present? ? @category.parent_id : "")) %>");

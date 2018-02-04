@@ -1,0 +1,7 @@
+<%- model_class = Address -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<% retailer_order_id = @retailer_order.present? ? @retailer_order.id : nil %>
+<% order_id = @order.present? ? @order.id : nil %>
+<%= render :partial => 'form', locals: {url: admin_address_path(order_id: order_id, retailer_order_id: retailer_order_id) } %>

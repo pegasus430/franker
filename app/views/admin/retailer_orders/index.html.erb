@@ -1,0 +1,64 @@
+<%- model_class = RetailerOrder -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_admin_retailer_order_path,
+            :class => 'btn btn-primary' %>
+            
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+	  <th><%= model_class.human_attribute_name(:confirmation_number) %></th>
+	  <th>Email</th>
+      <th>Status</th>
+	  <th>Orders</th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @retailer_orders.each do |retailer_order| %>
+      <tr>
+        <td><%= link_to retailer_order.id, admin_retailer_order_path(retailer_order) %></td>
+        <td><%= retailer_order.confirmation_number.present? ? retailer_order.confirmation_number : "" %></td>
+        <% order = retailer_order.orders.count > 0 ? retailer_order.orders[0] : nil %>
+        <td><%= order.present? && order.user.email.present? ? order.user.email : "" %></td>
+        <% if order.nil? %>
+        	<td class="text-info"><b>No Orders</b></td>
+         <% elsif order.shipped? %>
+          	<td class="text-success"><b><%= order.status %></b></td>
+        <% elsif order.failure? %>
+          <td class="text-danger"><b><%= order.status %></b></td>
+        <% elsif order.order_placed? %>
+          <td class="text-info"><b><%= order.status %></b></td>
+        <% elsif order.confirmed? %>
+          <td class="text-info"><b><%= order.status %></b></td>
+        <% elsif order.voided? %>
+          <td class="text-info"><b><%= order.status %></b></td>
+        <% end %>
+        <td><% retailer_order.orders.each do |order| %>
+        	<%= link_to order.id, admin_order_path(order) %>
+        	<% end %>
+        </td>
+
+		<td><%= retailer_order.created_at.in_time_zone('Pacific Time (US & Canada)').strftime("%I:%M%P %b %d") %></td>
+		<td><%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_admin_retailer_order_path(retailer_order), :class => 'btn btn-mini' %>
+        <% if retailer_order.confirmed? %>
+        <%= link_to "Order Shipped",
+                      admin_retailer_order_submit_for_settlement_and_email_shipping_confirmation_path(retailer_order.id), :method => :post, :class => 'btn btn-mini btn-success' %>
+        <%= link_to "Silent Order Shipped",
+                      admin_retailer_order_submit_for_settlement_and_email_shipping_confirmation_path(retailer_order.id, :silently => true), :method => :post, :class => 'btn btn-mini btn-success' %>
+        <% elsif retailer_order.order_placed? %>
+        <%= link_to "Order Confirmed",
+                      admin_retailer_order_email_confirmation_path(retailer_order.id), :method => :post, :class => 'btn btn-mini btn-primary' %>
+        <%= link_to "Silent Order Confirmed",
+                      admin_retailer_order_email_confirmation_path(retailer_order.id, :silently => true), :method => :post, :class => 'btn btn-mini btn-primary' %>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

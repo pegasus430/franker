@@ -1,0 +1,74 @@
+StoreName,ExternalCategory,InternalCategoryByStore,InternalCategoryForOverall,URL
+lululemon,Sports Bras,Sports Bras,ActiveWear,http://shop.lululemon.com/products/category/women-sports-bras?lnid=ln;women;tops;sports-bras
+lululemon,Tanks,Tanks,ActiveWear,http://shop.lululemon.com/products/category/women-tanks?lnid=ln;women;tops;tanks
+lululemon,Tops,Tops,ActiveWear,http://shop.lululemon.com/products/category/women-tops?lnid=ln;women;tops;tops
+lululemon,Jackets & Hoodies,Jackets & Hoodies,ActiveWear,http://shop.lululemon.com/products/category/women-jackets-and-hoodies?lnid=ln;women;tops;jackets-and-hoodies
+lululemon,Pants,Bottoms,ActiveWear,http://shop.lululemon.com/products/category/women-pants?lnid=ln;women;bottoms;pants
+lululemon,Crops,Bottoms,ActiveWear,http://shop.lululemon.com/products/category/women-crops?lnid=ln;women;bottoms;crops
+lululemon,Shorts,Shorts,ActiveWear,http://shop.lululemon.com/products/category/women-shorts?lnid=ln;women;bottoms;shorts
+lululemon,Skirts & Dresses,Skirts & Dresses,ActiveWear,http://shop.lululemon.com/products/category/women-skirts-and-dresses?lnid=ln;women;bottoms;skirts-and-dresses
+lululemon,bags,Bags,Bags,http://shop.lululemon.com/products/category/bags?lnid=ln;women;accessories;bags-
+lululemon,headwear & scarves,Accessories,Accessories,http://shop.lululemon.com/products/category/women-headbands-and-hats?lnid=ln;women;accessories;headwear-and-scarves
+lululemon,socks and underwear,Accessories,Accessories,http://shop.lululemon.com/products/category/women-socks-and-underwear?lnid=ln;women;accessories;socks-and-underwear-
+lululemon,yoga mats and props,Accessories,Accessories,http://shop.lululemon.com/products/category/women-yoga-mats-and-props?lnid=ln;women;accessories;yoga-mats-and-props-
+lululemon,water bottles,Accessories,Accessories,http://shop.lululemon.com/products/category/women-seasonal-accessories?lnid=ln;women;accessories;water-bottles
+lululemon,run accessories,Accessories,Accessories,http://shop.lululemon.com/products/category/women-run-accessories?lnid=ln;women;accessories;run-accessories
+J Crew,SHIRTS & TOPS,Shirts & Tops,Blouses & Shirts,https://www.jcrew.com/de/womens_category/shirtsandtops.jsp
+J Crew,SWEATERS,Sweaters,Sweaters,https://www.jcrew.com/de/womens_category/sweaters.jsp
+J Crew,SUITING,Suiting,Suiting,https://www.jcrew.com/de/womens_category/suiting.jsp
+J Crew,KNITS & TEES,Knits & Tees,Tees & More,https://www.jcrew.com/de/womens_category/knitstees.jsp
+J Crew,DENIM,Denim,Denim,https://www.jcrew.com/de/womens_category/denim.jsp
+J Crew,PANTS,Pants,Bottoms & Rompers,https://www.jcrew.com/de/womens_category/pants.jsp
+J Crew,DRESSES,Dresses,Dresses,https://www.jcrew.com/de/womens_category/dresses.jsp
+J Crew,SKIRTS,Skirts,Skirts,https://www.jcrew.com/de/womens_category/skirts.jsp
+J Crew,SHORTS,Shorts,Bottoms & Rompers,https://www.jcrew.com/de/womens_category/shorts.jsp
+J Crew,OUTERWEAR & BLAZERS,Outerwear & Blazers,Jackets & Coats,https://www.jcrew.com/de/womens_category/outerwear.jsp
+J Crew,SWIM,Swim & Cover-Ups,Swim & Cover-Ups,https://www.jcrew.com/de/womens_category/swim.jsp
+J Crew,BEACH COVER-UPS,Swim & Cover-Ups,Swim & Cover-Ups,https://www.jcrew.com/de/womens_category/beachcoverups.jsp
+J Crew,SLEEPWEAR,Accessories,Accessories,https://www.jcrew.com/de/womens_category/sleepwear.jsp
+J Crew,SHOES,Shoes,Shoes,https://www.jcrew.com/de/womens_category/shoes.jsp
+J Crew,JEWELRY,Jewelry,Jewelry,https://www.jcrew.com/de/womens_category/jewelry.jsp
+J Crew,BAGS,Bags,Bags,https://www.jcrew.com/de/womens_category/handbags.jsp
+J Crew,ACCESSORIES,Accessories,Accessories,https://www.jcrew.com/de/womens_category/accessories.jsp
+Madewell,DENIM,Denim,Denim,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B3%2B22%2B4294967294%2B20%2B225%26Nu%3DP_productid%26N%3D20%2B17%2B4294949650&NUM_ITEMS=15&PRODUCT%3C%3Eprd_id=845524441766932&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kt0zIBR
+Madewell,DRESSES,Dresses,Dresses,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B3%2B22%2B4294967294%2B20%2B225%26Nu%3DP_productid%26N%3D20%2B17%2B4294949678&NUM_ITEMS=15&PRODUCT%3C%3Eprd_id=845524441768741&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kt0_5Yu
+Madewell,TEES & MORE,Tees & More,Tees & More,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B3%2B22%2B4294967294%2B20%2B225%26Nu%3DP_productid%26N%3D20%2B17%2B4294949662&NUM_ITEMS=15&PRODUCT%3C%3Eprd_id=845524441768371&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kt0N9m3
+Madewell,SHIRTS & TOPS,Shirts & Tops,Blouses & Shirts,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B3%2B22%2B4294967294%2B20%2B225%26Nu%3DP_productid%26N%3D20%2B17%2B4294949674&NUM_ITEMS=15&PRODUCT%3C%3Eprd_id=845524441767045&FOLDER%3C%3Efolder_id=2534374302024183&bmUID=kt0zHCF
+Madewell,CHAMBRAY & DENIM,Shirts & Tops,Blouses & Shirts,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B3%2B22%2B4294967294%2B20%2B225%26Nu%3DP_productid%26N%3D20%2B17%2B4294949666&NUM_ITEMS=15&PRODUCT%3C%3Eprd_id=845524441768350&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kt0NrPT
+Madewell,SWEATERS,Sweaters,Sweaters,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B3%2B22%2B4294967294%2B20%2B225%26Nu%3DP_productid%26N%3D20%2B17%2B4294949665&NUM_ITEMS=15&PRODUCT%3C%3Eprd_id=845524441768350&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kt0zJqF
+Madewell,PANTS & SHORTS,Pants & Shorts,Bottoms & Rompers,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B3%2B22%2B4294967294%2B20%2B225%26Nu%3DP_productid%26N%3D20%2B17%2B4294949637&NUM_ITEMS=15&PRODUCT%3C%3Eprd_id=845524441766521&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kt0zHsq
+Madewell,SKIRTS,Skirts,Skirts,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B3%2B22%2B4294967294%2B20%2B225%26Nu%3DP_productid%26N%3D20%2B17%2B4294949651&NUM_ITEMS=15&PRODUCT%3C%3Eprd_id=845524441766932&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kt0zIC1
+Madewell,SWIM & COVER-UPS,Swim & Cover-Ups,Swim & Cover-Ups,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B3%2B22%2B4294967294%2B20%2B225%26Nu%3DP_productid%26N%3D20%2B17%2B4294949594&NUM_ITEMS=15&PRODUCT%3C%3Eprd_id=845524441768647&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kt0Z_bF
+Madewell,JACKETS & VESTS,Jackets & Vests,Jackets & Vests,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B3%2B22%2B4294967294%2B20%2B225%26Nu%3DP_productid%26N%3D20%2B17%2B4294949635&NUM_ITEMS=15&PRODUCT%3C%3Eprd_id=845524441766932&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kt0NaOx
+Madewell,SHOES & SANDALS,Shoes,Shoes,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B218%2B22%2B4294967294%2B216%2B205%26Nu%3DP_productid%26N%3D20%2B17%2B4294946110&NUM_ITEMS=15&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kwgO4xw
+Madewell,BAGS,Bags,Bags,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B218%2B22%2B4294967294%2B216%2B205%26Nu%3DP_productid%26N%3D20%2B17%2B4294949620&NUM_ITEMS=15&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kt0A3ER
+Madewell,JEWELRY,Jewelry,Jewelry,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B3%2B22%2B4294967294%2B20%2B225%26Nu%3DP_productid%26N%3D20%2B17%2B4294949608&NUM_ITEMS=15&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kt0zAeV
+Madewell,ACCESSORIES,Accessories,Accessories,https://www.madewell.com/search/searchNavigation.jsp?eneQuery=Nk%3Dall%26Ns%3DP_new_to_sale%257c1%257c%257cP_priority%257c0%26Ne%3D1%2B2%2B218%2B22%2B4294967294%2B216%2B205%26Nu%3DP_productid%26N%3D20%2B17%2B4294949602&NUM_ITEMS=15&FOLDER%3C%3Efolder_id=1408474395181138&bmUID=kt0A3EQ
+Aritzia,T-SHIRTS,T-Shirts,Tees & More,http://us.aritzia.com/sale/sale-tshirts
+Aritzia,BLOUSES,Blouses,Blouses & Shirts,http://us.aritzia.com/sale/sale-blouses
+Aritzia,SWEATERS,Sweaters,Sweaters,http://us.aritzia.com/sale/sale-sweaters
+Aritzia,JACKETS & COATS,Jackets & Coats,Jackets & Coats,http://us.aritzia.com/sale/sale-jackets
+Aritzia,PANTS,Pants,Bottoms & Rompers,http://us.aritzia.com/sale/sale-pants
+Aritzia,DENIM,Denim,Bottoms & Rompers,http://us.aritzia.com/sale/sale-jeans
+Aritzia,SHORTS,Shorts,Bottoms & Rompers,http://us.aritzia.com/sale/sale-shorts
+Aritzia,ROMPERS & JUMPSUITS,Rompers & Jumpsuits,Bottoms & Rompers,http://us.aritzia.com/sale/sale-rompersandjumpsuits
+Aritzia,SKIRTS,Skirts,Skirts,http://us.aritzia.com/sale/sale-skirts
+Aritzia,DRESSES,Dresses,Dresses,http://us.aritzia.com/sale/sale-dresses
+Aritzia,LINGERIE,Accessories,Accessories,http://us.aritzia.com/sale/sale-lingerie
+Aritzia,Accessories,Accessories,Accessories,http://us.aritzia.com/sale/sale-accessories
+Anthropologie,DRESSES,Dresses,Dresses,http://www.anthropologie.com/anthro/category/clothing/shopsale-dresses2.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-DRESSES
+Anthropologie,BLOUSES & BUTTONDOWNS,Blouses & Shirts,Blouses & Shirts,http://www.anthropologie.com/anthro/category/clothing/shopsale-tops.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-BLOUSES_&_BUTTONDOWNS
+Anthropologie,TEES & TANKS,Tees & Tanks,Tees & More,http://www.anthropologie.com/anthro/category/clothing/shopsale-tees.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-TEES_&_TANKS
+Anthropologie,SWEATERS & CARDIGANS,Sweaters & Cardigans,Sweaters,http://www.anthropologie.com/anthro/category/clothing/shopsale-sweaters.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-SWEATERS_&_CARDIGANS
+Anthropologie,JACKETS & COATS,Jackets & Coats,Jackets & Coats,http://www.anthropologie.com/anthro/category/clothing/shopsale-coats.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-JACKETS_&_COATS
+Anthropologie,JEANS,Denim,Denim,http://www.anthropologie.com/anthro/category/clothing/shopsale-jeans.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-JEANS
+Anthropologie,PANTS,Pants,Bottoms & Rompers,http://www.anthropologie.com/anthro/category/clothing/shopsale-pants.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-PANTS
+Anthropologie,SHORTS & ROMPERS,Shorts & Rompers,Bottoms & Rompers,http://www.anthropologie.com/anthro/category/clothing/shopsale-shorts.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-SHORTS_&_ROMPERS
+Anthropologie,SKIRTS,Skirts,Skirts,http://www.anthropologie.com/anthro/category/clothing/shopsale-skirts.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-SKIRTS
+Anthropologie,SLEEPWEAR & INTIMATES,Sleepwear & Intimates,Accessories,http://www.anthropologie.com/anthro/category/clothing/shopsale-loungewear.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-SLEEPWEAR_&_INTIMATES
+Anthropologie,SWIMWEAR,Swim & Activewear,Swim & Cover-Ups,http://www.anthropologie.com/anthro/category/clothing/shopsale-swimwear.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-SWIMWEAR
+Anthropologie,ACTIVEWEAR,ActiveWear,ActiveWear,http://www.anthropologie.com/anthro/category/clothing/shopsale-activewear.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-ACTIVEWEAR
+Anthropologie,Shoes,Shoes,Shoes,http://www.anthropologie.com/anthro/category/shoes/shopsale-shoes.jsp?cm_sp=TOPNAV-_-SHOPSALE-_-SHOPSALE-SHOES&cm_re=TOPNAV-_-SHOPSALE-_-SHOPSALE-SHOES
+Anthropologie,Jewelry,Jewelry,Jewelry,http://www.anthropologie.com/anthro/category/accessories/shopsale-jewelry.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-JEWELRY
+Anthropologie,Bags & Wallets,Bags & Wallets,Bags,http://www.anthropologie.com/anthro/category/accessories/shopsale-bags.jsp?cm_sp=LEFTNAV-_-SUB_CATEGORY-_-BAGS_&_WALLETS
+Anthropologie,Accessories,Accessories,Accessories,http://www.anthropologie.com/anthro/category/shoes/shopsale-shoes.jsp?cm_sp=TOPNAV-_-SHOPSALE-_-SHOPSALE-SHOES&cm_re=TOPNAV-_-SHOPSALE-_-SHOPSALE-SHOES

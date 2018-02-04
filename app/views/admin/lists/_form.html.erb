@@ -1,0 +1,47 @@
+<%= form_for @list, url: url, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :designer_url, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :designer_url, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :designer_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :designer_name, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="list_content_square_image">Content square image (316x252)</label>
+<!--     <%= f.label :content_square_image, :class => 'control-label' %> -->
+    <div class="controls">
+      <%= f.file_field :content_square_image, :class => 'file_field', accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+      <%= image_tag(@list.content_square_image, style: "width:100px;height:100px;")%>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="list_cover_image">Cover image (640x1033)</label>
+<!--     <%= f.label :cover_image, :class => 'control-label' %> -->
+    <div class="controls">
+      <%= f.file_field :cover_image, :class => 'file_field', accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+      <%= image_tag(@list.cover_image, style: "width:100px;height:100px;")%>
+    </div>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_lists_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,321 @@
+KateSpade_BaubleBar_worker:
+  cron: "0 9 * * *"
+  class: "DoteCrawler"
+  queue: store_crawler
+  args:
+    KateSpade:        "kate_spade_metric"
+    BaubleBar:        "bb_metric"
+
+AmericanEagle_worker:
+  cron: "0 13 * * *"
+  class: "DoteCrawler"
+  queue: store_crawler
+  args:
+    AmericanEagle:    "american_eagle_metric"
+    
+Abercrombie_worker:
+  cron: "0 1 * * *"
+  class: "DoteCrawler"
+  queue: store_crawler
+  args:
+    Abercrombie:      "abercrombie_metric"
+
+AmericanApparel_worker:
+  cron: "0 17 * * *"
+  class: "DoteCrawler"
+  queue: store_crawler
+  args:
+    AmericanApparel:  "american_apparel_metric"
+
+VineyardVines_worker:
+  cron: "0 17 * * *"
+  class: "DoteCrawler"
+  queue: store_crawler
+  args:
+    VineyardVines:    "vineyard_metric"
+
+CharlotteRusse_worker:
+  cron: "0 21 * * *"
+  class: "DoteCrawler"
+  queue: store_crawler
+  args:
+    CharlotteRusse:   "cr_metric"
+
+HotTopic_worker:
+  cron: "0 21 * * *"
+  class: "DoteCrawler"
+  queue: store_crawler
+  args:
+    HotTopic:         "ht_metric"
+
+Aritzia_worker:
+  cron: "0 1 * * *"
+  class: "DoteCrawler"
+  queue: store_crawler
+  args:
+    Aritzia:          "aritzia_metric"
+    
+Adidas_worker:
+  cron: "0 1 * * *"
+  class: "DoteCrawler"
+  queue: store_crawler
+  args:
+    Adidas:          "adidas_metric"
+
+##### splitting up new_stores_crawler workers across a day (6 hrs/grp) #####
+ToryBurch_worker:
+  cron: "0 11 * * *"
+  class: "DoteCrawler"
+  queue: new_stores_crawler
+  args:
+    ToryBurch:        "tory_burch_metric"
+
+Rue_worker:
+  cron: "0 10 * * *"
+  class: "DoteCrawler"
+  queue: new_stores_crawler
+  args:
+    Rue:              "rue_metric"
+    
+NastyGal_worker:
+  cron: "0 16 * * *"
+  class: "DoteCrawler"
+  queue: new_stores_crawler
+  args:
+    NastyGal:         "nasty_gal_metric"
+     
+LillyPulitzer_worker:
+  cron: "0 16 * * *"
+  class: "DoteCrawler"
+  queue: new_stores_crawler
+  args:
+    LillyPulitzer:    "lilly_metric"
+       
+WetSeal_worker:
+  cron: "0 22 * * *"
+  class: "DoteCrawler"
+  queue: new_stores_crawler
+  args:
+    WetSeal:          "wet_seal_metric"
+
+Aldo_worker:
+  cron: "0 22 * * *"
+  class: "DoteCrawler"
+  queue: new_stores_crawler
+  args:
+    Aldo:             "aldo_metric"
+
+shopsense_worker:
+  cron: "0 6,18 * * *"
+  class: "DoteCrawler"
+  queue: shopsense_crawler
+  args:
+    VictoriaSecret:   "vs_metric"
+
+##### splitting up CjStoreWorkers across a day (12 hrs/grp) #####
+cj_worker:
+  cron: "0 0 * * *"
+  class: "DoteCrawler"
+  queue: cj_crawler
+  args:
+    AnnTaylor:         "ann_taylor_metric"
+    SheInside:         "she_inside_metric"
+
+ShopBop_worker:
+  cron: "0 0 * * *"
+  class: "DoteCrawler"
+  queue: cj_crawler
+  args:
+    ShopBop:           "shopbop_metric"
+    
+Athleta_worker:
+  cron: "0 0 * * *"
+  class: "DoteCrawler"
+  queue: cj_crawler
+  args:
+    Athleta:           "athleta_metric"
+
+garage_loft_worker:
+  cron: "0 6 * * *"
+  class: "DoteCrawler"
+  queue: cj_crawler
+  args:
+    GarageClothing:    "garage_clothing_metric"
+    Loft:              "loft_metric"
+    
+BananaRepublic_worker:
+  cron: "0 6 * * *"
+  class: "DoteCrawler"
+  queue: cj_crawler
+  args:
+    BananaRepublic:    "banana_republic_metric"
+
+pacsun_worker:
+  cron: "0 12 * * *"
+  class: "DoteCrawler"
+  queue: cj_crawler
+  args:
+    Pacsun:            "pacsun_clothing_metric"
+
+aeropostale_worker:
+  cron: "0 6 * * *"
+  class: "DoteCrawler"
+  queue: ebay_crawler
+  args:
+    Aeropostale:        "aeropostale_metric"
+
+ebay_worker:
+  cron: "0 6 * * *"
+  class: "DoteCrawler"
+  queue: ebay_crawler
+  args:
+    JuicyCouture:       "juicy_couture_metric"
+    # CWonder:            "cwonder_metric"
+
+GAP_worker:
+  cron: "0 12 * * *"
+  class: "DoteCrawler"
+  queue: ebay_crawler
+  args:
+    Gap:           "gap_metric"
+##### splitting up more_info workers across a day (4 hrs each) #####
+hm_more_info_worker:
+  cron: "0 7 * * *"
+  class: "DoteCrawler"
+  queue: more_info
+  args:
+    HM:                 "hm_metric"
+
+free_people_more_info_worker:
+  cron: "0 11 * * *"
+  class: "DoteCrawler"
+  queue: more_info
+  args:
+    FreePeople:         "freepeople_metric"
+
+hollister_more_info_worker:
+  cron: "0 15 * * *"
+  class: "DoteCrawler"
+  queue: more_info
+  args:
+    Hollister:          "hollister_metric"
+
+anthro_more_info_worker:
+  cron: "0 19 * * *"
+  class: "DoteCrawler"
+  queue: more_info
+  args:
+    Anthropologie:      "anthropologie_metric"
+
+brandy_more_info_worker:
+  cron: "0 23 * * *"
+  class: "DoteCrawler"
+  queue: more_info
+  args:
+    BrandyMelville:     "brandymelville_metric"
+
+zara_more_info_worker:
+  cron: "0 3 * * *"
+  class: "DoteCrawler"
+  queue: more_info
+  args:
+    Zara:               "zara_metric"
+########## End more_info Queue ##########
+
+##### splitting up more_info workers across a day (6 hrs each) #####
+urban_more_info_worker_slow:
+  cron: "0 2 * * *"
+  class: "DoteCrawler"
+  queue: more_info_slow
+  args:
+    UrbanOutfitters:    "urban_metric"
+
+lululemon_more_info_worker_slow:
+  cron: "0 8 * * *"
+  class: "DoteCrawler"
+  queue: more_info_slow
+  args:
+    Lululemon:          "lululemon_metric"
+
+jcrew_more_info_worker_slow:
+  cron: "0 14 * * *"
+  class: "DoteCrawler"
+  queue: more_info_slow
+  args:
+    Jcrew:              "jcrew_metric"
+
+madewell_more_info_worker_slow:
+  cron: "0 20 * * *"
+  class: "DoteCrawler"
+  queue: more_info_slow
+  args:
+    Madewell:           "madewell_metric"
+########## End more_info Queue ##########
+
+make_items_sold:
+  cron: "0 0,12 * * *"
+  class: "ItemsSoldOutWorker"
+  queue: items_sold_out_crawler
+  args:
+    Lululemon:          "lulu_sold_metric"
+    BrandyMelville:     "bm_sold_metric"
+    Jcrew:              "jcrew_sold_metric"
+    Hollister:          "hollister_sold_metric"
+
+update_more_info:
+  cron: "0 0,10 * * *"
+  class: "UpdateMoreInfoWorker"
+  queue: update_more_info_crawler
+  args:
+    Anthropologie:      "anthropologie_sold_metric"
+
+tillys_wildfox_worker:
+  cron: "0 12 * * *"
+  class: "DoteCrawler"
+  queue: slow_crawler
+  args:
+    Tilly:              "tilly_metric"
+    Wildfox:            "wildfox_metric"
+
+old_navy_worker:
+  cron: "0 0 * * *"
+  class: "DoteCrawler"
+  queue: slow_crawler
+  args:
+    OldNavy:              "old_navy_metric"
+
+linkshare_worker:
+  cron: "0 5 * * *"
+  class: "DoteCrawler"
+  queue: linkshare_crawler
+  args:
+    Sephora:           "sephora_metric"
+    Topshop:           "topshop_metric"
+    AllSaints:         "all_saints_metric"
+    # Toms:              "toms_metric"
+    # SteveMadden:       "steve_madden_metric"
+    
+asos_worker:
+  cron: "0 5 * * *"
+  class: "DoteCrawler"
+  queue: linkshare_crawler
+  args:
+    ASOS:              "asos_metric"
+
+forever_worker:
+  cron: "0 4 * * *"
+  class: "DoteCrawler"
+  queue: forever_crawler
+  args:
+    Forever:            "forever_metric"
+
+# run at 7am & 5pm PST
+silent_notification_worker:
+  cron: "0 0,14 * * *"
+  class: "SilentNotificationsWorker"
+  queue: silent_notification
+
+open_images_worker:
+  cron: "0 0 1,7,13,19,25 * *"
+  class: "ImageWorker"
+  queue: image_crawler

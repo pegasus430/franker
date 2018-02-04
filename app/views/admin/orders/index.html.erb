@@ -1,0 +1,74 @@
+<%- model_class = Order -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:retailer_id) %></th>
+	  <th><%= model_class.human_attribute_name(:user_uuid) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:total_amount) %></th>
+      <th><%= model_class.human_attribute_name(:item_amount) %></th>
+      <th><%= model_class.human_attribute_name(:sales_tax_amount) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:errors_hash) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= link_to order.id, admin_order_path(order) %></td>
+        <td><b><% if !order.retailer_order_id.nil? && order.retailer_order_id > 0 %>
+        	<%= link_to order.retailer_order_id, admin_retailer_order_path(order.retailer_order_id) %>
+        	<% else %>
+        	none
+        	<% end %></b></td>
+		<td><%= order.user.uuid %></td>
+        <td><%= order.user.email.present? ? order.user.email : "" %></td>
+        <td>$<%= order.total_amount ? (order.total_amount.to_f/100).to_f : order.total_amount %></td>
+        <td>$<%= order.item_amount ? (order.item_amount.to_f/100).to_f : order.item_amount %></td>
+        <td>$<%= order.sales_tax_amount ? (order.sales_tax_amount.to_f/100).to_f : order.sales_tax_amount %></td>
+        <% if order.shipped? %>
+          <td class="text-success"><b><%= order.status %></b></td>
+        <% end %>
+        <% if order.failure? %>
+          <td class="text-danger"><b><%= order.status %></b></td>
+        <% end %>
+        <% if order.order_placed? || order.confirmed? %>
+          <td class="text-info"><b><%= order.status %></b></td>
+        <% end %>
+        <% if order.voided? %>
+          <td class="text-info"><b><%= order.status %></b></td>
+        <% end %>
+
+		<td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_admin_order_path(order), :class => 'btn btn-mini' %>
+          <% if order.order_placed? || order.confirmed? %>
+          	<%= link_to "submit payment",
+                      admin_order_submit_for_settlement_path(order.id), :method => :post, :class => 'btn btn-mini btn-primary' %>
+          <% end %>
+		  <% if order.order_placed? || order.confirmed? %>
+            <%= link_to "sold out",
+                      admin_order_sold_out_path(order.id), :method => :post, :class => 'btn btn-mini btn-danger' %>
+          	<%= link_to "void",
+                      admin_order_void_path(order.id), :method => :post, :class => 'btn btn-mini btn-warning' %>
+          <% end %>
+          <% if order.shipped? %>
+          	<b>Payment Done</b>
+          <% end %>
+		</td>
+        <td><%= order.created_at.in_time_zone('Pacific Time (US & Canada)').strftime("%I:%M%P %b %d") %></td>
+        <td><%= order.errors_hash %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_admin_order_path,
+              :class => 'btn btn-primary' %> -->

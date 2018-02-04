@@ -1,0 +1,73 @@
+Date : 25th Sep, 2014
+
+1. Update all user_items_count for items, in dev server.
+2. run the scraping code.
+3. Update all the items with store_id whose has nil values
+
+
+
+For 3.9 Version :
+Need to do
+
+1. For new stores popup , update previous and release version dates
+2. For batchtime, run DoteSettings.create in console
+3. For J Crew store rename, Update the store name to "J.Crew"
+
+
+Getting Started :
+
+1. Clone the project
+
+2. Dev Branch contains the most up-to-date code
+a. After cloning, by default, you'll be in master branch. Switch to Dev.
+
+3. Create DB with command 'rake db:create'
+a. If you run into any error, like "Permission Denied", make sure the username and password in database.yml match with the username and password of DB in your development PC.
+
+4. Migrate DB => 'rake db:migrate'
+
+5. Install Ruby 2.1.2 using RVM(Preferred) or rbenv
+
+6. run 'bundle install' to install gems
+
+7. Seed Data
+a. Rename 'j.crew.png' to 'j_crew.png'
+b. Seed Data into DB => 'rake db:seed'
+c. Rename 'j_crew.png' to 'j.crew.png'
+
+
+Data Source :
+
+There are four ways through which we'll get Products Data. They are,
+1. StoreAPI
+2. Cj
+3. LinkShare
+4. Ebay
+
+1. StoreAPI
+Classes which inherit the StoreAPI Class scrapes the webpages with Nokogiri (a XML/HTML Parser). StoreAPI contains methods like creating/updating items, Making items sold out or avaliable in DB which are common for all classes which inherit StoreAPI Class and individual Store-classes contains store-specific scraping methods. Any change in StoreAPI.rb will reflect in all other classes which inherit StoreAPI.
+
+2. Cj
+CJ provides multi-store data with its API. So, Cj Class contains methods for fetching products from CJ API and creating, updating, making items sold-out/sale in DB.
+
+3. LinkShare
+LinkShare class contains code for downloading zip/tar file, extracting XML file from zip/tar, extracte products data from XML file. Usually, the zip file is downloaded and extracted to "db/data/" folder with 'classname_in_downcase.xml' as filename.
+
+4. Ebay
+
+
+
+Deployment :
+
+1. Create a branch with version name as branch name (Ex: 3.10) based on Dev Branch
+
+2. Change the 'set :branch, "master"' to Newly created branch name in '/config/deploy.rb'
+
+3. create a folder in '/config/deploy/' with dote-web-v{version_number} as folder name. This folder contains all configs specific to this version. (like production.rb file)
+NOTE: The configs in these folder overwrite the configs in 'RAILS_ROOT/config/' folder.
+
+4. Now add 'set :servers, "{IP_of_new_EC2_Instance}"' to '/deploy/{RAILS_ENVIRONMENT}.rb' file and comment out existing 'set :server' commands
+
+5. run 'cap {RAILS_ENVIRONMENT} setup'
+
+6. run 'cap {RAILS_ENVIRONMENT} deploy'

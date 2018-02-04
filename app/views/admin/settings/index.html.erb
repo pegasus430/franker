@@ -1,0 +1,18 @@
+<%- model_class = Setting -%>
+<div class="page-header">
+  <h1>Settings</h1>
+</div>
+<%= form_tag update_settings_admin_settings_path, method: :put do %>
+  <div class="control-group">
+    <%= label_tag :rate_this_app_enabled, "Rate this app enabled:" %>
+    <div class="controls">
+      <span class="span2">
+        Yes <%= radio_button_tag :rate_this_app_enabled, "1", ((Setting.find_by key:'rate_this_app_enabled').value == '1') %>
+      </span>
+      <span class="span2">
+      	No <%= radio_button_tag :rate_this_app_enabled, "0", ((Setting.find_by key:'rate_this_app_enabled').value != '1') %>
+      </span>
+    </div>
+    <%= submit_tag("Save Changes") %>
+  </div>
+<% end %>

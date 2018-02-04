@@ -1,0 +1,76 @@
+<% if params[:force_upgrade] == "true" %>
+  <div class="page-header">
+  <h1>Force Upgrade</h1>
+</div>
+  <%= form_for [:admin, @user], :html => { :class => 'form-horizontal' } do |f| %>
+    <div class="control-group">
+      <%= f.label :force_upgrade, :class => 'control-label' %>
+      <div class="controls">
+        <span class="span2">
+          <%= f.radio_button :force_upgrade, true, checked: "#{'checked' if @user.force_upgrade == true}", class: "span1" %>
+          <%= f.label :force_upgrade, "Yes", class: "span0" %>
+        </span>
+        <span class="span2">
+          <%= f.radio_button :force_upgrade, false, checked: "#{'checked' if @user.force_upgrade == false}", class: "span1" %>
+          <%= f.label :force_upgrade, "No", class: "span0" %>
+        </span>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :appstore_url, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :appstore_url, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  root_path, :class => 'btn' %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<% if params[:batch_time] == "true" %>
+  <div class="page-header">
+    <h1>Batch Time</h1>
+  </div>
+  <%= form_for [:admin, @settings], url: admin_update_settings_path, method: :put, :html => { :class => 'form-horizontal' } do |f| %>
+    <div class="control-group">
+      <%= f.label :batch_time, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :batch_time, :class => 'text_field', value: @settings.batch_time, name: "settings[batch_time]" %>
+        <span>MINUTES</span>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  root_path, :class => 'btn' %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<%= form_for @user, url: url, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+	
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  admin_retailer_order_path(@retailer_order), :class => 'btn' %>
+  </div>
+<% end %>

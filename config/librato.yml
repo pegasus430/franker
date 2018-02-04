@@ -1,0 +1,9 @@
+production:
+  user: "christie@usedote.com"
+  token: 40b1f2c5f03e11bc946fdc6667ef46f7e52b2fc8cd13d384dc65d1d758c1669e
+  flush_interval: 10
+  
+development:
+  user: "christie@usedote.com"
+  token: 40b1f2c5f03e11bc946fdc6667ef46f7e52b2fc8cd13d384dc65d1d758c1669e
+  flush_interval: 10

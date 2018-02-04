@@ -1,0 +1,18 @@
+.clear {
+  clear: both;
+}
+.table .store-url, .table .item-url {
+  width: 300px;
+  word-break: break-all;
+  word-wrap: break-word;
+  display: block;
+}
+
+.modal-body {
+  min-height: 200px;
+  overflow-y: scroll;
+  .chosen-container.chosen-container-multi {
+    width: 100% !important;
+  }
+}
+

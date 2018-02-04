@@ -1,0 +1,95 @@
+<%= form_for @category, url: url, :html => { :class => 'form-horizontal' } do |f| %>
+  <% if params[:type] == "store_categories" %>
+    <%= f.hidden_field :overall_category, value: false %>
+    <%= f.hidden_field :category_type, value: "Internal" %>
+    <div class="control-group">
+      <%= f.label :store_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :store_id, Store.pluck(:name, :id), :prompt => "Select", :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :parent_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :parent_id, Category.internal_for_overall.map {|c| [c.name, c.id] }, :prompt => "Select", :class => 'text_field' %>
+      </div>
+    </div>
+  <% end %>
+  <% if params[:type] == "overall_categories" %>
+    <%= f.hidden_field :overall_category, value: true %>
+    <%= f.hidden_field :category_type, value: "Internal" %>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <% if params[:type] == "external" %>
+    <%= f.hidden_field :overall_category, value: false %>
+    <%= f.hidden_field :category_type, value: "External" %>
+    <div class="control-group">
+      <%= f.label :url, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :url, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :special_tag, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :special_tag, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :special, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :special, :class => 'text_field' %>
+      </div>
+    </div>
+    <div class="control-group external_category">
+      <%= f.label :store_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :store_id, Store.pluck(:name, :id), :prompt => "Select", :class => 'text_field external_category' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :parent_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :parent_id, Category.internal_for_store.map {|c| [c.name, c.id] }, :selected => @category.parent_id, :class => 'text_field' %>
+      </div>
+    </div>
+
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.submit "Submit", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_categories_path, :class => 'btn' %>
+  </div>
+<% end %>
+
+<%= content_for :javascripts do %>
+<script type='text/javascript' language='javascript'>
+$(document).ready(function(){
+  $.ajax({
+        url: "<%= filter_by_store_admin_categories_path %>",
+        data: {
+          store_id : $('.external_category #category_store_id').val(),
+          id: "<%= params[:id] %>"
+        },
+        dataType: "script"
+      });
+
+  $('.external_category #category_store_id').change(function() {
+    $.ajax({
+      url: "<%= filter_by_store_admin_categories_path %>",
+      data: {
+        store_id : $('.external_category #category_store_id').val()
+      },
+      dataType: "script"
+    });
+  });
+})
+</script>
+<% end %>
